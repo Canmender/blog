@@ -4,12 +4,16 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
 const {
   title = '林寸',
-  description = '历史科普 · 游戏开发 · MC服务器 · AI创作'
+  description = '历史科普 · 游戏开发 · MC服务器 · AI创作',
+  image = '/og.png'
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, 'https://lincun.linjie.online');
 ---
 
 <!DOCTYPE html>
@@ -22,22 +26,35 @@ const {
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- SEO -->
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="林寸" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- GSAP -->
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   </head>
-  <body class="bg-black text-white min-h-screen overflow-x-hidden">
+  <body class="bg-black text-white min-h-screen overflow-x-hidden antialiased">
     <!-- 导航栏 -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-500">
       <div class="max-w-6xl mx-auto flex items-center justify-between">
         <a href="/" class="text-white font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">林寸</a>
-        <!-- 桌面导航 -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="#about" class="text-gray-400 hover:text-white text-sm transition-colors">关于</a>
-          <a href="#projects" class="text-gray-400 hover:text-white text-sm transition-colors">项目</a>
-          <a href="#timeline" class="text-gray-400 hover:text-white text-sm transition-colors">时间线</a>
-          <a href="https://github.com/Canmender" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">GitHub</a>
+          <a href="#about" class="nav-link text-gray-400 hover:text-white text-sm transition-colors">关于</a>
+          <a href="#projects" class="nav-link text-gray-400 hover:text-white text-sm transition-colors">项目</a>
+          <a href="#timeline" class="nav-link text-gray-400 hover:text-white text-sm transition-colors">时间线</a>
+          <a href="https://github.com/Canmender" target="_blank" class="nav-link text-gray-400 hover:text-white text-sm transition-colors">GitHub</a>
         </div>
-        <!-- 汉堡菜单 -->
         <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="菜单">
           <span class="w-5 h-0.5 bg-white transition-all duration-300 origin-center" id="bar1"></span>
           <span class="w-5 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
@@ -55,107 +72,78 @@ const {
     </div>
 
     <!-- 鼠标跟随光效 -->
-    <div id="cursor-glow" class="fixed w-64 h-64 rounded-full pointer-events-none z-0 opacity-0 transition-opacity duration-300" style="background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%); transform: translate(-50%, -50%);"></div>
+    <div id="cursor-glow" class="fixed w-80 h-80 rounded-full pointer-events-none z-0 opacity-0 transition-opacity duration-500" style="background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%); transform: translate(-50%, -50%);"></div>
 
     <slot />
 
     <script is:inline>
-      // 导航栏滚动效果
+      // 导航栏
       const navbar = document.getElementById('navbar');
-      let lastScroll = 0;
       window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        if (scrollY > 80) {
-          navbar.classList.add('bg-black/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
-        } else {
-          navbar.classList.remove('bg-black/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
-        }
-        lastScroll = scrollY;
+        navbar.classList.toggle('bg-black/80', window.scrollY > 80);
+        navbar.classList.toggle('backdrop-blur-xl', window.scrollY > 80);
+        navbar.classList.toggle('border-b', window.scrollY > 80);
+        navbar.classList.toggle('border-white/5', window.scrollY > 80);
+      });
+
+      // 导航高亮当前区块
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => {
+          if (window.scrollY >= s.offsetTop - 200) current = s.id;
+        });
+        navLinks.forEach(link => {
+          link.classList.toggle('text-white', link.getAttribute('href') === '#' + current);
+          link.classList.toggle('text-gray-400', link.getAttribute('href') !== '#' + current);
+        });
       });
 
       // 汉堡菜单
       const menuBtn = document.getElementById('menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
-      const bar1 = document.getElementById('bar1');
-      const bar2 = document.getElementById('bar2');
-      const bar3 = document.getElementById('bar3');
       let menuOpen = false;
-
       menuBtn.addEventListener('click', () => {
         menuOpen = !menuOpen;
-        if (menuOpen) {
-          mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-          mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
-          bar1.style.transform = 'rotate(45deg) translate(2px, 2px)';
-          bar2.style.opacity = '0';
-          bar3.style.transform = 'rotate(-45deg) translate(2px, -2px)';
-          bar3.style.width = '1.25rem';
-        } else {
-          mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-          mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-          bar1.style.transform = '';
-          bar2.style.opacity = '1';
-          bar3.style.transform = '';
-          bar3.style.width = '0.75rem';
-        }
+        mobileMenu.classList.toggle('opacity-0', !menuOpen);
+        mobileMenu.classList.toggle('pointer-events-none', !menuOpen);
+        mobileMenu.classList.toggle('opacity-100', menuOpen);
+        mobileMenu.classList.toggle('pointer-events-auto', menuOpen);
+        document.getElementById('bar1').style.transform = menuOpen ? 'rotate(45deg) translate(2px, 2px)' : '';
+        document.getElementById('bar2').style.opacity = menuOpen ? '0' : '1';
+        document.getElementById('bar3').style.transform = menuOpen ? 'rotate(-45deg) translate(2px, -2px)' : '';
+        document.getElementById('bar3').style.width = menuOpen ? '1.25rem' : '0.75rem';
       });
-
-      // 点击移动端链接关闭菜单
       document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-          menuOpen = false;
-          mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-          mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-          bar1.style.transform = '';
-          bar2.style.opacity = '1';
-          bar3.style.transform = '';
-          bar3.style.width = '0.75rem';
-        });
+        link.addEventListener('click', () => { menuOpen = false; mobileMenu.classList.add('opacity-0', 'pointer-events-none'); mobileMenu.classList.remove('opacity-100', 'pointer-events-auto'); document.getElementById('bar1').style.transform = ''; document.getElementById('bar2').style.opacity = '1'; document.getElementById('bar3').style.transform = ''; document.getElementById('bar3').style.width = '0.75rem'; });
       });
 
       // 平滑滚动
       document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-          e.preventDefault();
-          const target = document.querySelector(a.getAttribute('href'));
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+        a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
       });
 
       // 鼠标跟随光效
       const cursorGlow = document.getElementById('cursor-glow');
-      let mouseX = 0, mouseY = 0;
-      let glowX = 0, glowY = 0;
+      let mx = 0, my = 0, gx = 0, gy = 0;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursorGlow.style.opacity = '1'; });
+      document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
+      (function anim() { gx += (mx - gx) * 0.06; gy += (my - gy) * 0.06; cursorGlow.style.left = gx + 'px'; cursorGlow.style.top = gy + 'px'; requestAnimationFrame(anim); })();
 
-      document.addEventListener('mousemove', e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursorGlow.style.opacity = '1';
-      });
-
-      document.addEventListener('mouseleave', () => {
-        cursorGlow.style.opacity = '0';
-      });
-
-      function animateGlow() {
-        glowX += (mouseX - glowX) * 0.08;
-        glowY += (mouseY - glowY) * 0.08;
-        cursorGlow.style.left = glowX + 'px';
-        cursorGlow.style.top = glowY + 'px';
-        requestAnimationFrame(animateGlow);
-      }
-      animateGlow();
-
-      // 卡片 3D 倾斜效果
+      // 卡片 3D 倾斜
       document.querySelectorAll('.project-card, .tech-item').forEach(card => {
+        card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
         card.addEventListener('mousemove', e => {
-          const rect = card.getBoundingClientRect();
-          const x = (e.clientX - rect.left) / rect.width - 0.5;
-          const y = (e.clientY - rect.top) / rect.height - 0.5;
-          card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale(1.02)`;
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) scale(1.02)`;
+          card.style.boxShadow = `${-x * 10}px ${y * 10}px 30px rgba(0,0,0,0.3)`;
         });
         card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg) scale(1)';
+          card.style.transform = '';
+          card.style.boxShadow = '';
         });
       });
     </script>
@@ -163,6 +151,10 @@ const {
 </html>
 
 <style is:global>
-  /* 平滑滚动 */
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  ::selection { background: rgba(139,92,246,0.3); color: white; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #000; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #555; }
 </style>
