@@ -26,37 +26,20 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <!-- 关于我 -->
-  <section class="relative py-32 px-6">
+  <section id="about" class="relative py-32 px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-sm tracking-[0.3em] text-gray-500 uppercase mb-16 opacity-0" data-animate="fade">About</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div class="md:col-span-2 space-y-6">
-          <p class="text-2xl font-light leading-relaxed text-gray-300">
-            你好，我是<span class="text-white font-medium">林寸</span>。
-          </p>
-          <p class="text-gray-400 leading-relaxed">
-            一个什么都想尝试的独立创作者。现在专注于历史科普视频、游戏开发和 AI 创作。
-          </p>
-          <p class="text-gray-400 leading-relaxed">
-            相信技术是表达的工具，不是目的。用 UE5 做游戏，用 ComfyUI 画人物，用 Java 写服务器插件，用 LLM 辅助一切——都是为了让想法落地。
-          </p>
-          <p class="text-gray-500 text-sm">
-            「做事先想清楚，想清楚就动手，动手就做到底。」
-          </p>
+          <p class="text-2xl font-light leading-relaxed text-gray-300">你好，我是<span class="text-white font-medium">林寸</span>。</p>
+          <p class="text-gray-400 leading-relaxed">一个什么都想尝试的独立创作者。现在专注于历史科普视频、游戏开发和 AI 创作。</p>
+          <p class="text-gray-400 leading-relaxed">相信技术是表达的工具，不是目的。用 UE5 做游戏，用 ComfyUI 画人物，用 Java 写服务器插件，用 LLM 辅助一切——都是为了让想法落地。</p>
+          <p class="text-gray-500 text-sm">「做事先想清楚，想清楚就动手，动手就做到底。」</p>
         </div>
         <div class="space-y-4">
-          <div class="bg-white/5 rounded-xl p-4 border border-white/5">
-            <span class="text-gray-500 text-xs uppercase tracking-wider">方向</span>
-            <p class="text-white mt-1">独立创作 · 全栈开发</p>
-          </div>
-          <div class="bg-white/5 rounded-xl p-4 border border-white/5">
-            <span class="text-gray-500 text-xs uppercase tracking-wider">工具</span>
-            <p class="text-white mt-1">UE5 · ComfyUI · Java · Python</p>
-          </div>
-          <div class="bg-white/5 rounded-xl p-4 border border-white/5">
-            <span class="text-gray-500 text-xs uppercase tracking-wider">状态</span>
-            <p class="text-white mt-1">永远在学习，永远在折腾</p>
-          </div>
+          <div class="bg-white/5 rounded-xl p-4 border border-white/5"><span class="text-gray-500 text-xs uppercase tracking-wider">方向</span><p class="text-white mt-1">独立创作 · 全栈开发</p></div>
+          <div class="bg-white/5 rounded-xl p-4 border border-white/5"><span class="text-gray-500 text-xs uppercase tracking-wider">工具</span><p class="text-white mt-1">UE5 · ComfyUI · Java · Python</p></div>
+          <div class="bg-white/5 rounded-xl p-4 border border-white/5"><span class="text-gray-500 text-xs uppercase tracking-wider">状态</span><p class="text-white mt-1">永远在学习，永远在折腾</p></div>
         </div>
       </div>
     </div>
@@ -67,147 +50,43 @@ import Base from '../layouts/Base.astro';
     <div class="max-w-6xl mx-auto">
       <h2 class="text-sm tracking-[0.3em] text-gray-500 uppercase mb-16 opacity-0" data-animate="fade">Tech Stack</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-          <div class="text-3xl mb-3">🎮</div>
-          <h3 class="text-white font-medium text-sm">UE5</h3>
-          <p class="text-gray-500 text-xs mt-1">蓝图 · StateTree</p>
-        </div>
-        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-          <div class="text-3xl mb-3">☕</div>
-          <h3 class="text-white font-medium text-sm">Java</h3>
-          <p class="text-gray-500 text-xs mt-1">Paper Plugin · Bukkit</p>
-        </div>
-        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-          <div class="text-3xl mb-3">🐍</div>
-          <h3 class="text-white font-medium text-sm">Python</h3>
-          <p class="text-gray-500 text-xs mt-1">自动化 · AI · 工具链</p>
-        </div>
-        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-          <div class="text-3xl mb-3">🎨</div>
-          <h3 class="text-white font-medium text-sm">ComfyUI</h3>
-          <p class="text-gray-500 text-xs mt-1">IPAdapter · ControlNet</p>
-        </div>
-        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-          <div class="text-3xl mb-3">📹</div>
-          <h3 class="text-white font-medium text-sm">视频创作</h3>
-          <p class="text-gray-500 text-xs mt-1">历史科普 · 文案</p>
-        </div>
-        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-          <div class="text-3xl mb-3">🤖</div>
-          <h3 class="text-white font-medium text-sm">LLM</h3>
-          <p class="text-gray-500 text-xs mt-1">Hermes · DSPy · RAG</p>
-        </div>
-        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-          <div class="text-3xl mb-3">🌐</div>
-          <h3 class="text-white font-medium text-sm">Web</h3>
-          <p class="text-gray-500 text-xs mt-1">Astro · VitePress</p>
-        </div>
-        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center">
-          <div class="text-3xl mb-3">✍️</div>
-          <h3 class="text-white font-medium text-sm">写作</h3>
-          <p class="text-gray-500 text-xs mt-1">网文 · SCP · 教程</p>
-        </div>
+        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center"><div class="text-3xl mb-3">🎮</div><h3 class="text-white font-medium text-sm">UE5</h3><p class="text-gray-500 text-xs mt-1">蓝图 · StateTree</p></div>
+        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center"><div class="text-3xl mb-3">☕</div><h3 class="text-white font-medium text-sm">Java</h3><p class="text-gray-500 text-xs mt-1">Paper Plugin · Bukkit</p></div>
+        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center"><div class="text-3xl mb-3">🐍</div><h3 class="text-white font-medium text-sm">Python</h3><p class="text-gray-500 text-xs mt-1">自动化 · AI · 工具链</p></div>
+        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center"><div class="text-3xl mb-3">🎨</div><h3 class="text-white font-medium text-sm">ComfyUI</h3><p class="text-gray-500 text-xs mt-1">IPAdapter · ControlNet</p></div>
+        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center"><div class="text-3xl mb-3">📹</div><h3 class="text-white font-medium text-sm">视频创作</h3><p class="text-gray-500 text-xs mt-1">历史科普 · 文案</p></div>
+        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center"><div class="text-3xl mb-3">🤖</div><h3 class="text-white font-medium text-sm">LLM</h3><p class="text-gray-500 text-xs mt-1">Hermes · DSPy · RAG</p></div>
+        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center"><div class="text-3xl mb-3">🌐</div><h3 class="text-white font-medium text-sm">Web</h3><p class="text-gray-500 text-xs mt-1">Astro · VitePress</p></div>
+        <div class="tech-item group p-6 bg-white/[0.02] rounded-xl border border-white/5 hover:border-white/10 transition-all duration-300 text-center"><div class="text-3xl mb-3">✍️</div><h3 class="text-white font-medium text-sm">写作</h3><p class="text-gray-500 text-xs mt-1">网文 · SCP · 教程</p></div>
       </div>
     </div>
   </section>
 
   <!-- 项目展示 -->
-  <section class="relative py-32 px-6 border-t border-white/5">
+  <section id="projects" class="relative py-32 px-6 border-t border-white/5">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-sm tracking-[0.3em] text-gray-500 uppercase mb-16 opacity-0" data-animate="fade">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <a href="/projects/history" class="project-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 opacity-0 block" data-animate="card">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-2xl group-hover:from-amber-500/20 transition-all duration-500"></div>
-          <div class="relative">
-            <span class="text-amber-500 text-sm font-medium">视频创作</span>
-            <h3 class="text-2xl font-bold mt-3 mb-3">历史科普系列</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">用说书人的口吻讲述历史，成语溯源，知识包裹。从林汉达到现代叙事。</p>
-            <span class="inline-block mt-4 text-xs text-gray-600 group-hover:text-gray-400 transition-colors">查看详情 →</span>
-          </div>
-        </a>
-        <a href="/projects/ue5" class="project-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 opacity-0 block" data-animate="card">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-2xl group-hover:from-blue-500/20 transition-all duration-500"></div>
-          <div class="relative">
-            <span class="text-blue-500 text-sm font-medium">游戏开发</span>
-            <h3 class="text-2xl font-bold mt-3 mb-3">UE5 修仙 RPG</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">虚幻引擎5打造的开放世界修仙游戏，蓝图驱动，状态机驱动的AI系统。</p>
-            <span class="inline-block mt-4 text-xs text-gray-600 group-hover:text-gray-400 transition-colors">查看详情 →</span>
-          </div>
-        </a>
-        <a href="/projects/mc" class="project-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 opacity-0 block" data-animate="card">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/10 to-transparent rounded-full blur-2xl group-hover:from-green-500/20 transition-all duration-500"></div>
-          <div class="relative">
-            <span class="text-green-500 text-sm font-medium">服务器</span>
-            <h3 class="text-2xl font-bold mt-3 mb-3">MC 修仙服</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">Paper 1.21.4 + 自研插件生态，双币经济系统，修仙玩法集成。</p>
-            <span class="inline-block mt-4 text-xs text-gray-600 group-hover:text-gray-400 transition-colors">查看详情 →</span>
-          </div>
-        </a>
-        <a href="/projects/comfyui" class="project-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 opacity-0 block" data-animate="card">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-2xl group-hover:from-purple-500/20 transition-all duration-500"></div>
-          <div class="relative">
-            <span class="text-purple-500 text-sm font-medium">AI 创作</span>
-            <h3 class="text-2xl font-bold mt-3 mb-3">ComfyUI 人物管线</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">国漫数字插画风格的AI人物生成管线，IPAdapter + ControlNet 精确控制。</p>
-            <span class="inline-block mt-4 text-xs text-gray-600 group-hover:text-gray-400 transition-colors">查看详情 →</span>
-          </div>
-        </a>
+        <a href="/projects/history" class="project-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 opacity-0 block" data-animate="card"><div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-2xl group-hover:from-amber-500/20 transition-all duration-500"></div><div class="relative"><span class="text-amber-500 text-sm font-medium">视频创作</span><h3 class="text-2xl font-bold mt-3 mb-3">历史科普系列</h3><p class="text-gray-400 text-sm leading-relaxed">用说书人的口吻讲述历史，成语溯源，知识包裹。</p><span class="inline-block mt-4 text-xs text-gray-600 group-hover:text-gray-400 transition-colors">查看详情 →</span></div></a>
+        <a href="/projects/ue5" class="project-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 opacity-0 block" data-animate="card"><div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-2xl group-hover:from-blue-500/20 transition-all duration-500"></div><div class="relative"><span class="text-blue-500 text-sm font-medium">游戏开发</span><h3 class="text-2xl font-bold mt-3 mb-3">UE5 修仙 RPG</h3><p class="text-gray-400 text-sm leading-relaxed">虚幻引擎5打造的开放世界修仙游戏，蓝图驱动。</p><span class="inline-block mt-4 text-xs text-gray-600 group-hover:text-gray-400 transition-colors">查看详情 →</span></div></a>
+        <a href="/projects/mc" class="project-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 opacity-0 block" data-animate="card"><div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/10 to-transparent rounded-full blur-2xl group-hover:from-green-500/20 transition-all duration-500"></div><div class="relative"><span class="text-green-500 text-sm font-medium">服务器</span><h3 class="text-2xl font-bold mt-3 mb-3">MC 修仙服</h3><p class="text-gray-400 text-sm leading-relaxed">Paper 1.21.4 + 自研插件生态，双币经济系统。</p><span class="inline-block mt-4 text-xs text-gray-600 group-hover:text-gray-400 transition-colors">查看详情 →</span></div></a>
+        <a href="/projects/comfyui" class="project-card group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 opacity-0 block" data-animate="card"><div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-2xl group-hover:from-purple-500/20 transition-all duration-500"></div><div class="relative"><span class="text-purple-500 text-sm font-medium">AI 创作</span><h3 class="text-2xl font-bold mt-3 mb-3">ComfyUI 人物管线</h3><p class="text-gray-400 text-sm leading-relaxed">国漫数字插画风格的AI人物生成管线。</p><span class="inline-block mt-4 text-xs text-gray-600 group-hover:text-gray-400 transition-colors">查看详情 →</span></div></a>
       </div>
     </div>
   </section>
 
   <!-- 时间线 -->
-  <section class="relative py-32 px-6 border-t border-white/5">
+  <section id="timeline" class="relative py-32 px-6 border-t border-white/5">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-sm tracking-[0.3em] text-gray-500 uppercase mb-16 opacity-0" data-animate="fade">Timeline</h2>
       <div class="relative">
         <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-white/10 via-white/5 to-transparent"></div>
         <div class="space-y-12">
-          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline">
-            <div class="md:w-1/2 md:pr-12 md:text-right">
-              <span class="text-gray-500 text-sm">2026.07</span>
-              <h3 class="text-white font-medium mt-1">个人博客上线</h3>
-              <p class="text-gray-500 text-sm mt-1">Astro + Tailwind + GSAP，暗色主题</p>
-            </div>
-            <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div>
-            <div class="md:w-1/2 md:pl-12"></div>
-          </div>
-          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline">
-            <div class="md:w-1/2 md:pr-12 md:text-right">
-              <span class="text-gray-500 text-sm">2026.06</span>
-              <h3 class="text-white font-medium mt-1">ComfyUI 人物管线定型</h3>
-              <p class="text-gray-500 text-sm mt-1">方向E锁定，IPAdapter+ControlNet精确控制</p>
-            </div>
-            <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div>
-            <div class="md:w-1/2 md:pl-12"></div>
-          </div>
-          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline">
-            <div class="md:w-1/2 md:pr-12 md:text-right">
-              <span class="text-gray-500 text-sm">2026.05</span>
-              <h3 class="text-white font-medium mt-1">MC 修仙服插件生态</h3>
-              <p class="text-gray-500 text-sm mt-1">XiuXianCore + Combat + Pill + Items 四件套</p>
-            </div>
-            <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div>
-            <div class="md:w-1/2 md:pl-12"></div>
-          </div>
-          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline">
-            <div class="md:w-1/2 md:pr-12 md:text-right">
-              <span class="text-gray-500 text-sm">2026.04</span>
-              <h3 class="text-white font-medium mt-1">UE5 修仙 RPG 启动</h3>
-              <p class="text-gray-500 text-sm mt-1">蓝图+EnhancedInput+StateTree，阶段一进行中</p>
-            </div>
-            <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div>
-            <div class="md:w-1/2 md:pl-12"></div>
-          </div>
-          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline">
-            <div class="md:w-1/2 md:pr-12 md:text-right">
-              <span class="text-gray-500 text-sm">2026.03</span>
-              <h3 class="text-white font-medium mt-1">历史科普视频第1集</h3>
-              <p class="text-gray-500 text-sm mt-1">4651字脚本完成，林汉达风格</p>
-            </div>
-            <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div>
-            <div class="md:w-1/2 md:pl-12"></div>
-          </div>
+          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline"><div class="md:w-1/2 md:pr-12 md:text-right"><span class="text-gray-500 text-sm">2026.07</span><h3 class="text-white font-medium mt-1">个人博客上线</h3><p class="text-gray-500 text-sm mt-1">Astro + Tailwind + GSAP</p></div><div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div><div class="md:w-1/2 md:pl-12"></div></div>
+          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline"><div class="md:w-1/2 md:pr-12 md:text-right"><span class="text-gray-500 text-sm">2026.06</span><h3 class="text-white font-medium mt-1">ComfyUI 人物管线定型</h3><p class="text-gray-500 text-sm mt-1">方向E锁定，IPAdapter+ControlNet</p></div><div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div><div class="md:w-1/2 md:pl-12"></div></div>
+          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline"><div class="md:w-1/2 md:pr-12 md:text-right"><span class="text-gray-500 text-sm">2026.05</span><h3 class="text-white font-medium mt-1">MC 修仙服插件生态</h3><p class="text-gray-500 text-sm mt-1">XiuXianCore + Combat + Pill + Items</p></div><div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div><div class="md:w-1/2 md:pl-12"></div></div>
+          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline"><div class="md:w-1/2 md:pr-12 md:text-right"><span class="text-gray-500 text-sm">2026.04</span><h3 class="text-white font-medium mt-1">UE5 修仙 RPG 启动</h3><p class="text-gray-500 text-sm mt-1">蓝图+EnhancedInput+StateTree</p></div><div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div><div class="md:w-1/2 md:pl-12"></div></div>
+          <div class="timeline-item relative pl-12 md:pl-0 md:flex md:items-center opacity-0" data-animate="timeline"><div class="md:w-1/2 md:pr-12 md:text-right"><span class="text-gray-500 text-sm">2026.03</span><h3 class="text-white font-medium mt-1">历史科普视频第1集</h3><p class="text-gray-500 text-sm mt-1">4651字脚本完成</p></div><div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-white/20 border-2 border-white/40"></div><div class="md:w-1/2 md:pl-12"></div></div>
         </div>
       </div>
     </div>
@@ -218,41 +97,11 @@ import Base from '../layouts/Base.astro';
     <div class="max-w-4xl mx-auto">
       <h2 class="text-sm tracking-[0.3em] text-gray-500 uppercase mb-16 opacity-0" data-animate="fade">Activity</h2>
       <div class="space-y-6">
-        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card">
-          <div class="w-2 h-2 rounded-full bg-amber-500 mt-2 shrink-0"></div>
-          <div>
-            <p class="text-white text-sm">历史科普系列 · 第1集脚本完成</p>
-            <p class="text-gray-500 text-xs mt-1">4651字，林汉达风格说书人叙事 · 2026.03</p>
-          </div>
-        </div>
-        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card">
-          <div class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></div>
-          <div>
-            <p class="text-white text-sm">UE5 修仙 RPG · 阶段一蓝图搭建中</p>
-            <p class="text-gray-500 text-xs mt-1">EnhancedInput + StateTree AI · 2026.04</p>
-          </div>
-        </div>
-        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card">
-          <div class="w-2 h-2 rounded-full bg-green-500 mt-2 shrink-0"></div>
-          <div>
-            <p class="text-white text-sm">MC 修仙服 · 四件套插件完成</p>
-            <p class="text-gray-500 text-xs mt-1">XiuXianCore 3.4 + Combat + Pill + Items · 2026.05</p>
-          </div>
-        </div>
-        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card">
-          <div class="w-2 h-2 rounded-full bg-purple-500 mt-2 shrink-0"></div>
-          <div>
-            <p class="text-white text-sm">ComfyUI 人物管线 · 方向E锁定</p>
-            <p class="text-gray-500 text-xs mt-1">DreamShaper_8 + IPAdapter 0.18 + OpenPose · 2026.06</p>
-          </div>
-        </div>
-        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card">
-          <div class="w-2 h-2 rounded-full bg-cyan-500 mt-2 shrink-0"></div>
-          <div>
-            <p class="text-white text-sm">个人博客上线</p>
-            <p class="text-gray-500 text-xs mt-1">Astro 7 + Tailwind + GSAP · HTTPS · 2026.07</p>
-          </div>
-        </div>
+        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card"><div class="w-2 h-2 rounded-full bg-amber-500 mt-2 shrink-0"></div><div><p class="text-white text-sm">历史科普系列 · 第1集脚本完成</p><p class="text-gray-500 text-xs mt-1">4651字，林汉达风格 · 2026.03</p></div></div>
+        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card"><div class="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0"></div><div><p class="text-white text-sm">UE5 修仙 RPG · 阶段一蓝图搭建中</p><p class="text-gray-500 text-xs mt-1">EnhancedInput + StateTree AI · 2026.04</p></div></div>
+        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card"><div class="w-2 h-2 rounded-full bg-green-500 mt-2 shrink-0"></div><div><p class="text-white text-sm">MC 修仙服 · 四件套插件完成</p><p class="text-gray-500 text-xs mt-1">XiuXianCore 3.4 + Combat + Pill + Items · 2026.05</p></div></div>
+        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card"><div class="w-2 h-2 rounded-full bg-purple-500 mt-2 shrink-0"></div><div><p class="text-white text-sm">ComfyUI 人物管线 · 方向E锁定</p><p class="text-gray-500 text-xs mt-1">DreamShaper_8 + IPAdapter 0.18 · 2026.06</p></div></div>
+        <div class="activity-item flex gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5 opacity-0" data-animate="card"><div class="w-2 h-2 rounded-full bg-cyan-500 mt-2 shrink-0"></div><div><p class="text-white text-sm">个人博客上线</p><p class="text-gray-500 text-xs mt-1">Astro 7 + Tailwind + GSAP · 2026.07</p></div></div>
       </div>
     </div>
   </section>
@@ -263,7 +112,6 @@ import Base from '../layouts/Base.astro';
       <p class="text-gray-600 text-sm">© 2026 林寸</p>
       <div class="flex gap-6 mt-4 md:mt-0">
         <a href="https://github.com/Canmender" target="_blank" class="text-gray-600 hover:text-white transition-colors text-sm">GitHub</a>
-        <span class="text-gray-700 text-sm">Bilibili</span>
       </div>
     </div>
   </footer>
@@ -281,29 +129,12 @@ import Base from '../layouts/Base.astro';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Hero 动画
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl.to('[data-animate="title"]', { opacity: 1, y: 0, duration: 1.2, delay: 0.3 })
       .to('[data-animate="subtitle"]', { opacity: 1, y: 0, duration: 1 }, '-=0.8')
       .to('[data-animate="divider"]', { opacity: 1, scaleX: 1, duration: 0.8 }, '-=0.6')
       .to('[data-animate="tagline"]', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4')
-      .add(() => {
-        const tagline = document.querySelector('[data-animate="tagline"]');
-        if (tagline) {
-          const text = tagline.textContent;
-          tagline.textContent = '';
-          tagline.style.opacity = '1';
-          tagline.style.transform = 'translateY(0)';
-          let i = 0;
-          function typeWriter() {
-            if (i < text.length) {
-              tagline.textContent += text.charAt(i);
-              i++;
-              setTimeout(typeWriter, 80);
-            }
-          }
-          setTimeout(typeWriter, 500);
-        }
-      })
       .to('[data-animate="scroll"]', { opacity: 0.6, duration: 0.6 }, '-=0.2');
 
     gsap.set('[data-animate="title"]', { y: 40 });
@@ -312,6 +143,21 @@ import Base from '../layouts/Base.astro';
     gsap.set('[data-animate="tagline"]', { y: 10 });
     tl.restart();
 
+    // 打字机效果
+    const tagline = document.querySelector('[data-animate="tagline"]');
+    if (tagline) {
+      const text = tagline.textContent;
+      tagline.textContent = '';
+      tagline.style.opacity = '1';
+      tagline.style.transform = 'translateY(0)';
+      let i = 0;
+      function typeWriter() {
+        if (i < text.length) { tagline.textContent += text.charAt(i); i++; setTimeout(typeWriter, 80); }
+      }
+      setTimeout(typeWriter, 2200);
+    }
+
+    // 滚动触发动画
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
@@ -327,4 +173,3 @@ import Base from '../layouts/Base.astro';
     });
   });
 </script>
-
