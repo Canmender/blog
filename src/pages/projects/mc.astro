@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="MC 修仙服 - 林寸" description="Paper 1.21.4 + 自研插件生态，双币经济系统。">
+  <section class="relative py-32 px-6">
+    <div class="max-w-4xl mx-auto">
+      <a href="/" class="text-gray-500 hover:text-white text-sm transition-colors mb-8 inline-block">← 返回首页</a>
+      <div class="mb-12">
+        <span class="text-green-500 text-sm font-medium">服务器</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-3">MC 修仙服</h1>
+        <p class="text-gray-400 mt-4 text-lg">Paper 1.21.4 + 自研插件生态，双币经济系统</p>
+      </div>
+
+      <div class="space-y-8 text-gray-400 leading-relaxed">
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/5">
+          <h2 class="text-white text-xl font-bold mb-4">项目简介</h2>
+          <p>一个基于 Paper 1.21.4 的 Minecraft 修仙主题服务器。核心是自研的插件生态——从修为系统到战斗系统，从丹药系统到物品系统，全部自己写的 Java 插件。</p>
+        </div>
+
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/5">
+          <h2 class="text-white text-xl font-bold mb-4">插件生态</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/5 rounded-lg p-4"><span class="text-green-400 text-sm">核心</span><p class="text-white mt-1">XiuXianCore 3.4</p><p class="text-gray-500 text-xs mt-1">修为/境界/经验系统</p></div>
+            <div class="bg-white/5 rounded-lg p-4"><span class="text-green-400 text-sm">战斗</span><p class="text-white mt-1">Combat 1.0</p><p class="text-gray-500 text-xs mt-1">修仙战斗系统</p></div>
+            <div class="bg-white/5 rounded-lg p-4"><span class="text-green-400 text-sm">丹药</span><p class="text-white mt-1">Pill 1.0</p><p class="text-gray-500 text-xs mt-1">炼丹/丹药效果</p></div>
+            <div class="bg-white/5 rounded-lg p-4"><span class="text-green-400 text-sm">物品</span><p class="text-white mt-1">Items 1.0</p><p class="text-gray-500 text-xs mt-1">自定义物品系统</p></div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/5">
+          <h2 class="text-white text-xl font-bold mb-4">经济系统</h2>
+          <p>双币设计：<strong class="text-white">灵石</strong>（日常货币）+ <strong class="text-white">仙源</strong>（高级货币）。灵石通过日常活动获取，仙源通过修炼/战斗获取。两种货币在不同商店流通，形成经济循环。</p>
+        </div>
+
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/5">
+          <h2 class="text-white text-xl font-bold mb-4">技术细节</h2>
+          <ul class="space-y-2 text-sm">
+            <li>• PAPI 变量: <code class="text-green-400">%cultivation_*</code> <code class="text-green-400">%xicombat_*</code> <code class="text-green-400">%xiuxianitems_*</code></li>
+            <li>• 编译环境: Java 21 + Maven</li>
+            <li>• GitHub: <a href="https://github.com/Canmender" target="_blank" class="text-green-400 hover:underline">Canmender</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

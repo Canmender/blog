@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="ComfyUI 人物管线 - 林寸" description="国漫数字插画风格的AI人物生成管线。">
+  <section class="relative py-32 px-6">
+    <div class="max-w-4xl mx-auto">
+      <a href="/" class="text-gray-500 hover:text-white text-sm transition-colors mb-8 inline-block">← 返回首页</a>
+      <div class="mb-12">
+        <span class="text-purple-500 text-sm font-medium">AI 创作</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-3">ComfyUI 人物管线</h1>
+        <p class="text-gray-400 mt-4 text-lg">国漫数字插画风格的AI人物生成管线</p>
+      </div>
+
+      <div class="space-y-8 text-gray-400 leading-relaxed">
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/5">
+          <h2 class="text-white text-xl font-bold mb-4">项目简介</h2>
+          <p>用 ComfyUI 搭建的一套人物图片生成管线。目标是生成国漫/韩漫风格的数字插画——2D cel-shaded，线条干净，不要水墨不要二次元不要照片写实。</p>
+        </div>
+
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/5">
+          <h2 class="text-white text-xl font-bold mb-4">管线参数（方向E · 最终锁定）</h2>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center py-2 border-b border-white/5"><span class="text-gray-400">底模型</span><span class="text-white font-mono text-sm">DreamShaper_8</span></div>
+            <div class="flex justify-between items-center py-2 border-b border-white/5"><span class="text-gray-400">IPAdapter</span><span class="text-white font-mono text-sm">weight=0.18 (style transfer precise)</span></div>
+            <div class="flex justify-between items-center py-2 border-b border-white/5"><span class="text-gray-400">ControlNet</span><span class="text-white font-mono text-sm">OpenPose strength=0.80</span></div>
+            <div class="flex justify-between items-center py-2 border-b border-white/5"><span class="text-gray-400">骨架图</span><span class="text-white font-mono text-sm">openpose_front_thick.png</span></div>
+            <div class="flex justify-between items-center py-2"><span class="text-gray-400">参考图</span><span class="text-white font-mono text-sm">D:\picture\ 4张</span></div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/5">
+          <h2 class="text-white text-xl font-bold mb-4">踩坑记录</h2>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><span class="text-purple-500 mt-1">•</span><span>IPAdapter weight 极为敏感：<code class="text-purple-400">0.25</code>→美漫粗线，<code class="text-purple-400">0.18</code>→webtoon清线</span></li>
+            <li class="flex items-start gap-3"><span class="text-purple-500 mt-1">•</span><span>InkPunk 底图有双人陷阱，已弃用</span></li>
+            <li class="flex items-start gap-3"><span class="text-purple-500 mt-1">•</span><span>构图偏胸像未到腰（OpenPose 固有限制），需多 seed 搜索或 outpainting</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/5">
+          <h2 class="text-white text-xl font-bold mb-4">进度</h2>
+          <div>
+            <div class="flex justify-between text-sm mb-1"><span class="text-white">方向E管线定型</span><span class="text-green-400">✅ 完成</span></div>
+            <p class="text-gray-500 text-sm">2026-06-01 锁定参数</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
